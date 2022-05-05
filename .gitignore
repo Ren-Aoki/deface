@@ -107,3 +107,5 @@ ENV/
 
 # VS Code
 .vscode/
+/.vs/slnx.sqlite
+/.vs/ProjectSettings.json

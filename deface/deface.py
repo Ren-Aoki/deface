@@ -37,7 +37,7 @@ def draw_det(
         replacewith: str = 'blur',
         ellipse: bool = True,
         draw_scores: bool = False,
-        ovcolor: Tuple[int] = (0, 0, 0),
+        ovcolor: Tuple[int] = (0, 255, 0),
         replaceimg = None
 ):
     if replacewith == 'solid':
