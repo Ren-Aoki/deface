@@ -37,7 +37,7 @@ def draw_det(
         replacewith: str = 'blur',
         ellipse: bool = True,
         draw_scores: bool = False,
-        ovcolor: Tuple[int] = (0, 255, 0),
+        ovcolor: Tuple[int] = (255, 255, 255),
         replaceimg = None
 ):
     if replacewith == 'solid':
@@ -144,6 +144,10 @@ def video_detect(
         # Perform network inference, get bb dets but discard landmark predictions
         dets, _ = centerface(frame, threshold=threshold)
 
+        # 検出は終わっているのでframeを指定の色で塗りつぶし
+        basecolor: Tuple[int] = (0, 0, 0)
+        cv2.rectangle(frame, (0, 0), (frame[0], frame[1]), basecolor, -1)
+        
         anonymize_frame(
             dets, frame, mask_scale=mask_scale,
             replacewith=replacewith, ellipse=ellipse, draw_scores=draw_scores,
