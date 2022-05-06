@@ -145,7 +145,7 @@ def video_detect(
         dets, _ = centerface(frame, threshold=threshold)
 
         # cv2.rectangle(frame, (0, 0), (frame[0], frame[1]), basecolor, -1)
-        cv2.rectangle(frame, (0, 0), (frame.shape[0], frame.shape[1]), (0, 0, 0), -1)
+        cv2.rectangle(frame, (0, 0), (frame.shape[1], frame.shape[0]), (0, 0, 0), -1)
         
         anonymize_frame(
             dets, frame, mask_scale=mask_scale,
