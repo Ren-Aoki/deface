@@ -68,7 +68,7 @@ def draw_det(
     if draw_scores:
         cv2.putText(
             frame, f'{score:.2f}', (x1 + 0, y1 - 20),
-            cv2.FONT_HERSHEY_DUPLEX, 0.5, (0, 255, 0)
+            cv2.FONT_HERSHEY_DUPLEX, 1.5, (0, 255, 0)
         )
 
 
