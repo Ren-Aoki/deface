@@ -144,9 +144,8 @@ def video_detect(
         # Perform network inference, get bb dets but discard landmark predictions
         dets, _ = centerface(frame, threshold=threshold)
 
-        # 検出は終わっているのでframeを指定の色で塗りつぶし
-        basecolor: Tuple[int] = (0, 0, 0)
-        cv2.rectangle(frame, (0, 0), (frame[0], frame[1]), basecolor, -1)
+        # cv2.rectangle(frame, (0, 0), (frame[0], frame[1]), basecolor, -1)
+        cv2.rectangle(frame, (0, 0), (frame.shape[0], frame.shape[1]), (0, 0, 0), -1)
         
         anonymize_frame(
             dets, frame, mask_scale=mask_scale,
